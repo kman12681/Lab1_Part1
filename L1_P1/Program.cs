@@ -1,45 +1,35 @@
 ﻿using System;
 
-namespace L1_P1
+
+namespace StringValidation
 {
     class Program
     {
         static void Main(string[] args)
         {
-        First:
-            Console.WriteLine("Enter a positive three digit number: ");
-            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Hello, this program will assess whether the digits in each corresponding place between two numbers add to the same value.");
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey(true);
 
-            if (num1 > 999 || num1 < 000)
-            {
-                Console.WriteLine("This is not a positive three digit number");
-                goto First;
-            }
+            Console.WriteLine("The console will read 'True' if the digits add to the same value, and 'False' if they do not.");
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey(true);
 
-        Second:
-            Console.WriteLine("Thank you, now enter another positive three digit number: ");
-            int num2 = int.Parse(Console.ReadLine());
-            if (num2 > 999 || num2 < 000)
-            {
-                Console.WriteLine("This is not a positive three digit number");
-                goto Second;
-            }
+            Console.WriteLine("Enter a three digit number: ");
+            string num1 = Console.ReadLine();
 
-            int total = Sum(num1, num2);
+            Console.WriteLine("Now enter another three digit number: ");
+            string num2 = Console.ReadLine();
 
-            // exceptions to handle, when decimals are used, when numbers larger than ints are used
-            // how to move the if statement to a second method
+            int a = num1[0];
+            int b = num1[1];
+            int c = num1[2];
 
-            if (total == 000 ||
-                total == 111 ||
-                total == 222 ||
-                total == 333 ||
-                total == 444 ||
-                total == 555 ||
-                total == 666 ||
-                total == 777 ||
-                total == 888 ||
-                total == 999)
+            int x = num2[0];
+            int y = num2[1];
+            int z = num2[2];
+
+            if (((a + x) == (b + y)) && ((b + y) == (c + z)))
             {
                 Console.WriteLine("True");
             }
@@ -47,13 +37,8 @@ namespace L1_P1
             {
                 Console.WriteLine("False");
             }
-            Console.Read();
-        }
-        public static int Sum(int x, int y)
-        {
-            int total = x + y;
-            return total;
-        }
+            Console.ReadLine();
 
+        }
     }
 }
