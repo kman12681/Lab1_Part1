@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimpleSum
+namespace L1_P1
 {
     class Program
     {
