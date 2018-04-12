@@ -1,4 +1,5 @@
 ﻿using System;
+//using System.Linq;
 
 namespace L1_P1
 {
@@ -7,9 +8,9 @@ namespace L1_P1
         static void Main(string[] args)
         {
             // Number of digits requested from user
-            
-            string digits = "ten";
-            int digitsCount = 10;
+
+            string digits = "four";
+            int digitsCount = 4;
 
             // Welcome User
 
@@ -41,8 +42,8 @@ namespace L1_P1
                 Console.WriteLine();
                 Console.WriteLine("Not a " + digits + " digit number.");
                 goto First;
-            }
-            
+            }                                 
+                             
             // Second Input 
 
             Second:
@@ -59,46 +60,74 @@ namespace L1_P1
                 Console.WriteLine();
                 Console.WriteLine("Not " + digits + " digits.");
                 goto Second;
-            }
+            }                                   
+                                                             
+                // Assigning variables to indexes                                           
 
-            // Assigning variables to indexes                                              
-            
                 int a = num1[0] + num2[0];
                 int b = num1[1] + num2[1];
                 int c = num1[2] + num2[2];
                 int d = num1[3] + num2[3];
-                int e = num1[4] + num2[4];
+                /*int e = num1[4] + num2[4];
                 int f = num1[5] + num2[5];
                 int g = num1[6] + num2[6];
                 int h = num1[7] + num2[7];
                 int i = num1[8] + num2[8];
-                int j = num1[9] + num2[9];          
+                int j = num1[9] + num2[9];*/          
                                                           
-           // Comparing indexes between num1 and num2
+                       // Comparing indexes between num1 and num2
 
-           if (a == b && b == c && c ==d && d == e && e == f &&
-                f == g && g == h && h == i && i == j) 
+                       if (a == b && b == c && c == d) /*&& d == e && e == f &&
+                           f == g && g == h && h == i && i == j)*/
+                         
+                       {
+                       Console.WriteLine();                
+                       Console.WriteLine("True");
+                       }
 
-                    {
-                        Console.WriteLine();                
-                        Console.WriteLine("True");
-                    }
+                       else
 
-                    else
+                       {
+                       Console.WriteLine();
+                       Console.WriteLine("False");
+                       }
 
-                    {
                         Console.WriteLine();
-                        Console.WriteLine("False");
-                    }
 
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("Press any key to try again.");
-            Console.ReadKey(true);
-            Console.WriteLine();
-            goto First;
+                                            /*//get and display the indices and values of first number
 
-        }
+                                            foreach (var item1 in num1.Select((value, index) => new { Value = value, Index = index }))
+                                            {
+
+                                                int num1Value = item1.Value;
+                                                int num1Index = item1.Index;
+                                                {
+                                                    Console.WriteLine();
+                                                    Console.WriteLine(item1);
+                                                }
+                                            }
+
+                                            //get and display the indices and value of second number
+
+                                            foreach (var item2 in num2.Select((value, index) => new { Value = value, Index = index }))
+                                                        {
+                                                            int num2Value = item2.Value;
+                                                            int num2Index = item2.Index;
+                                                            {
+                                                                Console.WriteLine();
+                                                                Console.WriteLine(item2);
+                                                            }
+                                                        }
+                                             */
+
+                        
+                        Console.WriteLine();
+                        Console.WriteLine("Press any key to try again.");
+                        Console.ReadKey(true);
+                        Console.WriteLine();
+                        goto First;
+
+        }       
     }
 }
                                                
