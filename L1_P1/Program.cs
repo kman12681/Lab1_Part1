@@ -23,11 +23,13 @@ namespace L1_P1
 
                 // First Input
 
+                while (true)
+
+                {
+
                 string num1;
 
-                while (true)
-                {
-                    while (true) // program won't continue until three digits entered
+                while (true) // program won't continue until three digits entered
                     {
                         Console.WriteLine();
                         Console.WriteLine("Please enter a three digit number:");
@@ -75,38 +77,51 @@ namespace L1_P1
                     // calling Task method
 
                     Task(num1, num2);
-                
-                    while (true) // will run program again if user enters "Y"
 
-                    {
 
-                        Console.WriteLine("Enter Y to try again");
-                        string input = Console.ReadLine().ToUpper();
+                    string response = DoAgain();
 
-                    if (input == "Y")
-                        break;
-                    
-                    else
+                if (response == "N")
+                    break;
+                                        
+                                                   
+                   
+                }
 
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("Not a valid entry.");
-                        Console.WriteLine();
-                    }
+            }
 
+        static string DoAgain()
+
+        {
+            while (true) // will run program again if user enters "Y"
+
+            {
+
+                Console.WriteLine("Do you want to try again? (Y or N)");
+                string input = Console.ReadLine().ToUpper();
+
+                if (input == "Y" || input == "N")
+                    return input;
+
+                else
+
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Not a valid entry.");
+                    Console.WriteLine();
                 }
 
             }
         }
-        
+
         // method to compare indexes
 
         static void Task(string num1, string num2)
 
         {
-            int a = num1[0] + num2[0];
-            int b = num1[1] + num2[1];
-            int c = num1[2] + num2[2];
+            int a = num1[0] + num2[0]; // compares hundreds values
+            int b = num1[1] + num2[1]; // compares tens values
+            int c = num1[2] + num2[2]; // compares ones values
 
                     
             if (a == b && b == c)
@@ -127,6 +142,8 @@ namespace L1_P1
 
 
         }
+
+    
     }
 }
                                                
